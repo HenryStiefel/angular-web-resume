@@ -1,0 +1,160 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Enter Resume Info</h1>
+        <hr>
+        <app-edit-personal></app-edit-personal>
+        <app-edit-education></app-edit-education>
+        <app-edit-experience></app-edit-experience>
+        <app-edit-skills></app-edit-skills>
+        <h3>Personal Info</h3>
+        <form>
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="name">Name</label>
+                    <input type="text"
+                        id="name"
+                        class="form-control"
+                        #nameInput>
+                </div>
+                <div class="col-sm-5 form-group">
+                    <label for="email">Email</label>
+                    <input type="email" 
+                        id="email" 
+                        class="form-control"
+                        #emailInput>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" 
+                        id="phone"
+                        class="form-control"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        #phoneInput>
+                </div>
+                <div class="col-sm-5 form-group">
+                    <label for="website">Website</label>
+                    <input type="url" 
+                        id="website"
+                        class="form-control"
+                        #websiteInput>
+                        <small>(LinkedIn, GitHub, etc.)</small>
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-success"
+            type="submit"
+            style="margin:5px;"
+            (click)="updatePersonal()">Update Personal Info
+        </button>
+        <hr>
+        <h3>Education</h3>
+        <form>
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="schoolName">School Name</label>
+                    <input type="text"
+                        id="schoolName"
+                        class="form-control"
+                        #schoolNameInput>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="expectedGradDate">Expected Graduation</label>
+                    <input type="date"
+                        id="expectedGradDate"
+                        class="form-control"
+                        #expectedGradDateInput>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 form-group">
+                    <label for="schoolDescription">Education Descriptions</label>
+                    <input type="text"
+                        id="schoolDescription"
+                        class="form-control"
+                        #schoolDescriptionInput>
+                    <small>Add one line at a time. Example line: 
+                        "GPA: 4.0" or "Merit Scholarship Recipient"
+                        <br>
+                        Hit button after entering in a single line.
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10">
+                    <button class="btn-primary" type="button"
+                        style="margin:10px;"
+                        (click)="addSchoolDescription()"
+                        (click)="schoolDescriptionInput.value=''">
+                        Add Description
+                    </button>
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-success"
+            type="submit"
+            style="margin:5px;"
+            (click)="updateEducation()">Update Education Info
+        </button>
+        <hr>
+        <h3>Experiences</h3>
+        <form>
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="experienceName">Experience Name</label>
+                    <input type="text"
+                        id="experienceName"
+                        class="form-control"
+                        #experienceNameInput>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label for="experienceStartDate">Start Date</label>
+                    <input type="date"
+                        id="experienceStartDate"
+                        class="form-control"
+                        #experienceStartDateInput>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="experienceEndDate">End Date</label>
+                    <input type="date"
+                        id="experienceEndDate"
+                        class="form-control"
+                        #experienceEndDateInput>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 form-group">
+                    <label for="experienceDescription">Experience Descriptions</label>
+                    <input type="text"
+                        id="experienceDescription"
+                        class="form-control"
+                        #experienceDescriptionInput>
+                    <small>Add one line at a time. Example line: 
+                        "Developed backend in C#", "Interpreted business
+                        requirements."
+                        <br>
+                        Hit button after entering in a single line.
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10">
+                    <button class="btn-primary" type="button"
+                        style="margin:10px;"
+                        (click)="onExperienceDescriptionClick()">
+                        Add Description
+                    </button>
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-success"
+            type="submit"
+            style="margin:5px;"
+            (click)="onSubmitExperiences()">Add Experience Info
+        </button>
+        <hr>
+    </div>
+</div>
