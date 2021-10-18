@@ -4,7 +4,8 @@ import { Resume } from "../resume/resume.model";
 export class ResumeService {
     resumeUpdate = new EventEmitter<Resume>();
 
-    private resume: Resume = { name: "",
+    private resume: Resume = { 
+        name: "",
         email: "",
         phone: "",
         website: "",
@@ -40,13 +41,23 @@ export class ResumeService {
     //     skills: ["C#","SQL","Python","Angular"]
     // };
 
-    personalInfoChanged(name: string, 
-        email: string, phone: string, website: string) {
+    updateName(name: string) {
         this.resume.name = name;
+        this.resumeUpdate.emit(this.resume);
+    }
+
+    updateEmail(email: string) {
         this.resume.email = email;
+        this.resumeUpdate.emit(this.resume);
+    }
+
+    updatePhone(phone: string) {
         this.resume.phone = phone;
+        this.resumeUpdate.emit(this.resume);
+    }
+
+    updateWebsite(website: string) {
         this.resume.website = website;
-        
         this.resumeUpdate.emit(this.resume);
     }
 

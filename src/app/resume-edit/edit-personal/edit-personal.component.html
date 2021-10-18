@@ -1,1 +1,69 @@
-<p>edit-personal works!</p>
+<h3>Personal Info</h3>
+<form>
+    <div class="row">
+        <div class="col-sm-7 form-group">
+            <label for="name">Name</label>
+            <input type="text"
+                id="name"
+                class="form-control"
+                #nameInput>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-success"
+                type="button"
+                style="margin:5px; margin-top:25px;"
+                (click)="updateName()">Update Name
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7 form-group">
+            <label for="email">Email</label>
+            <input type="email" 
+                id="email" 
+                class="form-control"
+                #emailInput>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-success"
+                type="button"
+                style="margin:5px; margin-top:25px;"
+                (click)="updateEmail()">Update Email
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7 form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" 
+                id="phone"
+                class="form-control"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                #phoneInput>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-success"
+                type="button"
+                style="margin:5px; margin-top:25px;"
+                (click)="updatePhone()">Update Phone
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7 form-group">
+            <label for="website">Website</label>
+            <input type="url" 
+                id="website"
+                class="form-control"
+                #websiteInput>
+                <small>(LinkedIn, GitHub, etc.)</small>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-success"
+                type="button"
+                style="margin:5px; margin-top:25px;"
+                (click)="updateWebsite()">Update Website
+            </button>
+        </div>
+    </div>
+</form>
