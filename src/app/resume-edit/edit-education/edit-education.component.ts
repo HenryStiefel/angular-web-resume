@@ -16,17 +16,29 @@ export class EditEducationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addSchoolDescription() {
-    this.resumeService.addEducationDescription(
-      this.schoolDescriptionInputRef.nativeElement.value
+  updateSchoolName() {
+    this.resumeService.updateSchoolName(
+      this.schoolNameInputRef.nativeElement.value
     );
   }
 
-  updateEducation() {
-    this.resumeService.educationInfoChanged(
-      this.schoolNameInputRef.nativeElement.value,
+  updateGradDate() {
+    this.resumeService.updateGradDate(
       new Date(this.expectedGradDateInputRef.nativeElement.value)
     );
   }
 
+  updateSchoolDescription() {
+    let desc: string = this.schoolDescriptionInputRef.nativeElement.value;
+
+    if (desc != '') {
+        this.resumeService.addEducationDescription(
+        this.schoolDescriptionInputRef.nativeElement.value
+      );
+      
+      this.schoolDescriptionInputRef.nativeElement.value = '';
+    } else {
+      alert('Please enter in a description string.');
+    }
+  }
 }

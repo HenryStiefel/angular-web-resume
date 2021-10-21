@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ResumeService } from 'src/app/services/resume.service';
 
 @Component({
   selector: 'app-edit-experience',
@@ -11,17 +12,17 @@ export class EditExperienceComponent implements OnInit {
   @ViewChild('experienceEndDateInput', { static: false}) experienceEndDateInputRef: ElementRef;
   @ViewChild('experienceDescriptionInput', { static: false}) experienceDescriptionInputRef: ElementRef;
 
-  constructor() { }
+  constructor(private resumeService: ResumeService) { }
 
   ngOnInit(): void {
   }
 
-  onExperienceDescriptionClick() {
+  updateExperienceName() {
+    this.resumeService.updateExperienceName(
+      this.experienceNameInputRef.nativeElement.value,
+      0
+    );
     
-  }
-
-  onSubmitExperiences() {
-
   }
 
 }

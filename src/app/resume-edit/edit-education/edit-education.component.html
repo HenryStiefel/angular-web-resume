@@ -1,23 +1,39 @@
 <h3>Education</h3>
 <form>
     <div class="row">
-        <div class="col-sm-5 form-group">
+        <div class="col-sm-7 form-group">
             <label for="schoolName">School Name</label>
             <input type="text"
                 id="schoolName"
                 class="form-control"
                 #schoolNameInput>
         </div>
-        <div class="col-sm-4 form-group">
+        <div class="col-sm-3 form-group">
+            <button class="btn btn-success"
+                type="button"
+                style="margin:5px; margin-top:25px;"
+                (click)="updateSchoolName()">Update
+            </button>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-sm-7 form-group">
             <label for="expectedGradDate">Expected Graduation</label>
             <input type="date"
                 id="expectedGradDate"
                 class="form-control"
                 #expectedGradDateInput>
         </div>
+        <div class="col-sm-3 form-group">
+            <button class="btn btn-success"
+                type="button"
+                style="margin:5px; margin-top:25px;"
+                (click)="updateGradDate()">Update
+            </button>
+        </div>
     </div>
     <div class="row">
-        <div class="col-sm-8 form-group">
+        <div class="col-sm-7 form-group">
             <label for="schoolDescription">Education Descriptions</label>
             <input type="text"
                 id="schoolDescription"
@@ -29,20 +45,13 @@
                 Hit button after entering in a single line.
             </small>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-10">
-            <button class="btn-primary" type="button"
-                style="margin:10px;"
-                (click)="addSchoolDescription()"
-                (click)="schoolDescriptionInput.value=''">
-                Add Description
+        <div class="col-sm-3 form-group">
+            <button class="btn btn-success"
+                type="button"
+                style="margin:5px; margin-top:25px;"
+                (click)="updateSchoolDescription()"
+                >Update
             </button>
         </div>
     </div>
 </form>
-<button class="btn btn-success"
-    type="submit"
-    style="margin:5px;"
-    (click)="updateEducation()">Update Education Info
-</button>

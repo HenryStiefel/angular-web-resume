@@ -61,19 +61,41 @@ export class ResumeService {
         this.resumeUpdate.emit(this.resume);
     }
 
-    educationInfoChanged(schoolName: string,
-        expectedGradDate: Date) {
-            this.resume.education.school = schoolName;
-            this.resume.education.expectedGradDate = expectedGradDate;
-        
+    updateSchoolName(name: string) {
+        this.resume.education.school = name;
+        this.resumeUpdate.emit(this.resume);
+    }
+
+    updateGradDate(date: Date) {
+        this.resume.education.expectedGradDate = date;
         this.resumeUpdate.emit(this.resume);
     }
 
     addEducationDescription(description: string) {
         this.resume.education.description.push(description);
-        
         this.resumeUpdate.emit(this.resume);
     }
+
+    updateExperienceName(name: string, num: number) {
+        this.resume.experience[num].name = name;
+        this.resumeUpdate.emit(this.resume);
+    }
+
+    updateExperienceStartDate(date: Date, num: number) {
+        this.resume.experience[num].startDate = date;
+        this.resumeUpdate.emit(this.resume);
+    }
+
+    updateExperienceEndDate(date: Date, num: number) {
+        this.resume.experience[num].endDate = date;
+        this.resumeUpdate.emit(this.resume);
+    }
+
+    addExperienceDescription(description: string, num: number) {
+        this.resume.experience[num].description.push(description);
+        this.resumeUpdate.emit(this.resume);
+    }
+    
 
     get name() {
         return this.resume.name;
